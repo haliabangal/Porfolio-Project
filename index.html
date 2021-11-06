@@ -14,17 +14,21 @@
 
 
 <body>
-    <div class="announcments">
-        COVID-19 UPDATES
-    </div>
-    <header class="header">
-        <img src="assets/ELIZABETH ACADEMY (1).png" alt="logo">
+    <a class="announcment-link" href="announcments.html">
+        <div class="announcments">
+            COVID-19 UPDATES
+        </div>
+    </a>
+    <header class="header" id="header">
+        <!-- <img src="assets/ELIZABETH ACADEMY (1).png" alt="logo"> -->
         <div class="header-column">
             <div class="top-heading">Parent Portal</div>
             <nav class="bottom-heading">
                 <a>Basic Information</a>
                 <a>Forms</a>
-                <a>ATTENDANCE</a>
+                <div class="pill-link">
+                    <a>ATTENDANCE</a>
+                </div>
             </nav>
         </div>
     </header>
@@ -38,7 +42,20 @@
 
     </footer>
 
+    <script>
+        window.onscroll = function () { myFunction() };
 
+        var header = document.getElementById("header");
+        var sticky = header.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        }
+    </script>
 
 </body>
 
